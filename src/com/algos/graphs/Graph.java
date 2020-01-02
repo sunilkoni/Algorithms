@@ -1,4 +1,4 @@
-package com.algo.graphs;
+package com.algos.graphs;
 
 import java.util.LinkedList;
 import java.util.Queue;

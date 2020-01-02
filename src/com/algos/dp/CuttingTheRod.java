@@ -1,4 +1,4 @@
-package com.algo.dp;
+package com.algos.dp;
 
 public class CuttingTheRod {
 
