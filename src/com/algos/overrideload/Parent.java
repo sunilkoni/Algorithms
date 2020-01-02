@@ -6,4 +6,9 @@ public class Parent {
 	{
 		return null;
 	}
+	
+	public static void callMeStatic()
+	{
+		System.out.println("Parent static method invoked");
+	}
 }

@@ -1,5 +1,7 @@
 package com.algos.overrideload;
 
+import java.util.Arrays;
+
 public class Main {
 	public static void main(String[] args) {
 		/*
@@ -7,11 +9,16 @@ public class Main {
 		 * System.out.println(g.j);
 		 */
 		GrandChild g = new GrandChild();
-		Parent p = (Parent) g;
+		Parent p = g;
+		g.grand();
 		//System.out.println(p.k);
 		System.out.println(g.k);
 		
 		System.out.println(callMe());
+		//float m = 1.5;
+		System.out.println(0.1*3);
+		int[] ar = {1,3,4,5,5,5};
+		System.out.println(Arrays.toString(ar));
 	}
 
 	private static int callMe() {
@@ -25,5 +32,13 @@ public class Main {
 		finally {
 			return 2;
 		}
+	}
+	
+	private static void showCasting()
+	{
+		Parent c = new Child();
+		Child c1 = (Child) c; //needs to typecasted as c is of type parent 
+		GrandChild gc = (GrandChild) c1;//needs to typecasted as c is of type parent
+		System.out.println(3*0.1);
 	}
 }

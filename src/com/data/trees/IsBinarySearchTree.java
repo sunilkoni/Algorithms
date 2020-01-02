@@ -12,7 +12,7 @@ public class IsBinarySearchTree {
 		root.left.left = new Node(3);
 		root.right = new Node(10);
 		root.right.left = new Node(9);
-		root.right.right = new Node(12);
+		root.right.right = new Node(11);
 		
 		isBinaryTree(root);
 		if(isBST)

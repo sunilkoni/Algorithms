@@ -5,7 +5,7 @@ public class JumpSearch {
 	public static void main(String[] args) {
 		int arr[] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 
                 34, 55, 89, 144, 233, 377, 610}; 
-    int x = 1; 
+    int x = 34; 
 
     // Find the index of 'x' using Jump Search 
     int index = jumpSearch(arr, x); 

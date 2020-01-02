@@ -18,7 +18,7 @@ public class HeightOfBT {
 			return 0;
 		
 		int leftH = heightOfBT(node.left, curLevel+1);
-		//int rightH = heightOfBT(node.right, curLevel+1);
+		int rightH = heightOfBT(node.right, curLevel+1);
 		
 		return 0;
 	}
