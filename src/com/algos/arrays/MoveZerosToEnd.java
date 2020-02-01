@@ -25,9 +25,11 @@ public class MoveZerosToEnd
     public static void main (String[] args) 
     { 
         int arr[] = {1, 9, 8, 4, 0, 0, 2, 7, 0, 6, 0, 9}; 
+        for (int i=0; i<arr.length; i++) 
+            System.out.print(arr[i]+" "); 
         int n = arr.length; 
         pushZerosToEnd(arr, n); 
-        System.out.println("Array after pushing zeros to the back: "); 
+        System.out.println("\nArray after pushing zeros to the back: "); 
         for (int i=0; i<n; i++) 
             System.out.print(arr[i]+" "); 
     } 

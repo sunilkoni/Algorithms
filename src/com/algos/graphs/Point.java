@@ -3,6 +3,7 @@ package com.algos.graphs;
 public class Point {
 	int x;
 	int y;
+	int dist;
 	
 	public Point(int x, int y) 
 	{
@@ -13,7 +14,7 @@ public class Point {
 	@Override
 	public String toString() 
 	{
-		return "(" + x +"," + y +")";
+		return "(" + x +"," + y +") -> "+dist;
 	}
 	
 	

@@ -17,11 +17,10 @@ public class SumOfPathOfTree {
 		root.right.right.left = new Node(59);
 		root.right.right.right = new Node(65);
 		
-		inOrder(root); //inroder of BST is always sorted
+		TreeTraversalUtil.inOrder(root); //inroder of BST is always sorted
 		System.out.println();
-		int sum = sumOfPathBetweenNodes(root, 15, 53);
-		//System.out.println();
-		System.out.println(sum);
+		int sumCorrect = sumOfPathBetweenNodes(getLowestCommonAncestor(root, 15, 53), 15, 53);
+		System.out.println(sumCorrect);
 		
 	}
 	
@@ -29,33 +28,30 @@ public class SumOfPathOfTree {
 	{
 		if(node == null)
 			return 0;
-		if(node.data == i) {
-			//System.out.println(node.data+", "+(node.data+i));
-			return node.data;
-		}
-			
-		else if (node.data == j) {
-			//System.out.println(node.data+", "+(node.data+j));
+		if(node.data == i || node.data == j) {
 			return node.data;
 		}
 			
 		
 		int left = sumOfPathBetweenNodes(node.left, i, j);
-		//System.out.println(left);
 		int right = sumOfPathBetweenNodes(node.right, i, j);
-		//System.out.println(right);
 		if(left!=0 || right != 0)
 			return left+right+node.data;
 		return 0;
 	}
 
-	public static void inOrder(Node node)
+	private static Node getLowestCommonAncestor(Node root, int right, int left) 
 	{
-		if(node == null)
-			return ;
-		inOrder(node.left);
-		System.out.print(node.data +" ");
-		inOrder(node.right);
+		if(root == null)
+			return null;
+		if(root.data == right || root.data == left)
+			return root;
+		Node leftNode = getLowestCommonAncestor(root.left, right, left);
+		Node rightNode = getLowestCommonAncestor(root.right, right, left);
+		
+		if(leftNode != null && rightNode != null)
+			return root;
+		return leftNode != null ? leftNode : rightNode;
 	}
 
 }

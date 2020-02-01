@@ -39,13 +39,18 @@ public class CheckIfMirror {
 
 	private static boolean checkIfMirror(Node root1, Node root2) 
 	{
-		if((root1 == null && root2 != null) || (root1 != null && root2 == null))
+		if(root1 == null && root2 == null)
+			return true;
+		if(root1 == null || root2 == null)
 			return false;
-		if(root1.data != root2.data)
-			return false;
-		checkIfMirror(root1.left, root2.right);
-		checkIfMirror(root1.right, root2.left);
-		return true;
+		if(root1.data == root2.data)
+		{
+			if(checkIfMirror(root1.left, root2.right)
+					&& (checkIfMirror(root1.right, root2.left)))
+					return true;
+		}
+		return false;
+		
 	}
 
 }

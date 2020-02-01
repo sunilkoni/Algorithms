@@ -1,6 +1,7 @@
 package com.data.linkedlist;
 
 import java.util.HashSet;
+import java.util.PriorityQueue;
 
 public class DuplicatesInLL {
 
@@ -46,6 +47,15 @@ public class DuplicatesInLL {
 			}
 			
 		}
+		PriorityQueue<Integer> p = new PriorityQueue<>();
+		p.offer(3);
+		p.offer(1);
+		p.offer(2);
+		p.offer(4);
+		p.offer(5);
+		/*
+		 * while (!p.isEmpty()) { System.out.println(p.remove()); }
+		 */
 		return head;
 	}
 
